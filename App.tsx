@@ -5,12 +5,9 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import productsReducer from './redux-store/products/products-reducer';
 import ShopNavigator from './navigation/ShopNavigator';
+import { RootReducer } from './redux-store/root/root-reducer';
 
-const rootReducer = combineReducers({
-  products: productsReducer
-});
-
-const store = createStore(rootReducer);
+const store = createStore(RootReducer);
 
 export default function App() {
   return (
