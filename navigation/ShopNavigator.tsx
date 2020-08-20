@@ -12,15 +12,19 @@ const Stack = createStackNavigator();
 export default function ProductsNavigator() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: Platform.OS === 'android' ? Colors.primary : ''
+          },
+          headerTintColor: Platform.OS === 'android' ? 'white' : Colors.primary
+        }}
+      >
         <Stack.Screen
           name="ProductsOverview"
           component={ProductsOverviewScreen}
           options={{
-            headerStyle: {
-              backgroundColor: Platform.OS === 'android' ? Colors.primary : ''
-            },
-            headerTintColor: Platform.OS === 'android' ? 'white' : Colors.primary
+            headerTitle: 'All Products'
           }}
         />
       </Stack.Navigator>
