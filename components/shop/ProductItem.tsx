@@ -18,36 +18,40 @@ const ProductItem = (props: IOwnProps) => {
   }
 
   return (
-    <TouchableCmp onPress={props.onViewDetail} >
-      <View style={styles.product}>
-        <View style={styles.imageContainer}>
-          <Image
-            source={{ uri: props.image }}
-            style={styles.image}
-          />
-        </View>
-        <View style={styles.details}>
-          <Text style={styles.title}>
-            {props.title}
-          </Text>
-          <Text style={styles.price}>
-            ${props.price.toFixed(2)}
-          </Text>
-        </View>
-        <View style={styles.actions}>
-          <Button
-            title="View Details"
-            color={Colors.primary}
-            onPress={props.onViewDetail}
-          />
-          <Button
-            title="To Cart"
-            color={Colors.primary}
-            onPress={props.onAddToCart}
-          />
-        </View>
+    <View style={styles.product}>
+      <View style={styles.touchable}>
+        <TouchableCmp onPress={props.onViewDetail}>
+          <View>
+            <View style={styles.imageContainer}>
+              <Image
+                source={{ uri: props.image }}
+                style={styles.image}
+              />
+            </View>
+            <View style={styles.details}>
+              <Text style={styles.title}>
+                {props.title}
+              </Text>
+              <Text style={styles.price}>
+                ${props.price.toFixed(2)}
+              </Text>
+            </View>
+            <View style={styles.actions}>
+              <Button
+                title="View Details"
+                color={Colors.primary}
+                onPress={props.onViewDetail}
+              />
+              <Button
+                title="To Cart"
+                color={Colors.primary}
+                onPress={props.onAddToCart}
+              />
+            </View>
+          </View>
+        </TouchableCmp>
       </View>
-    </TouchableCmp>
+    </View>
   );
 };
 
@@ -64,6 +68,10 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     height: 300,
     margin: 20
+  },
+  touchable: {
+    borderRadius: 10,
+    overflow: 'hidden'
   },
   imageContainer: {
     width: '100%',
