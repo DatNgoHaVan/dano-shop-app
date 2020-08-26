@@ -85,11 +85,13 @@ const styles = StyleSheet.create({
     height: '60%'
   },
   title: {
-    fontSize: 18,
-    marginVertical: 4
+    fontSize: 16,
+    fontFamily: 'open-sans-bold',
+    marginVertical: 2
   },
   price: {
     fontSize: 14,
+    fontFamily: 'open-sans',
     color: '#888'
   },
   actions: {
