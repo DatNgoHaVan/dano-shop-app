@@ -8,6 +8,7 @@ import ProductsOverviewScreen from '../screens/shop/ProductsOverviewScreen';
 import Colors from '../constants/Colors';
 import ProductsDetailScreen, { ProductsDetailScreenOptions } from '../screens/shop/ProductsDetailScreen';
 import { NavigationRoute } from 'react-navigation';
+import { navigationRef } from './NavigationUtils';
 
 interface INavigationProps {
   route: RouteProp<Record<string, any | undefined>, "ProductDetail">;
@@ -17,7 +18,7 @@ const Stack = createStackNavigator();
 
 export default function ProductsNavigator() {
   return (
-    <NavigationContainer>
+    <NavigationContainer ref={navigationRef}>
       <Stack.Navigator
         screenOptions={{
           headerStyle: {
